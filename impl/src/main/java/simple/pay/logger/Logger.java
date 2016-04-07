@@ -29,7 +29,7 @@ public class Logger {
         this.level = level;
     }
 
-    public void info(String methodName, String message, String... param) {
+    public void info(String methodName, String message, Object... param) {
         System.out.println(String.format("%s(%s): %s", clazz.getSimpleName(), methodName, String.format(message, param)));
     }
 

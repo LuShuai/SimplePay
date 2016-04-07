@@ -17,6 +17,14 @@ public class UserFundsServiceWS {
 
     FundTransactionServiceImpl fundTransactionService;
 
+    public FundTransactionServiceImpl getFundTransactionService() {
+        return fundTransactionService;
+    }
+
+    public void setFundTransactionService(FundTransactionServiceImpl fundTransactionService) {
+        this.fundTransactionService = fundTransactionService;
+    }
+
     public ChargeResponse processCharge(ChargeRequest chargeRequest) {
         validateChargeAmount(chargeRequest);
         Long userId = chargeRequest.getUserId();
@@ -27,6 +35,7 @@ public class UserFundsServiceWS {
         chargeRequest.setAmount(amount);
         chargeRequest.setTax(tax);
 
+        getFundTransactionService().addPendingEntry(Long userId, Tran);
 
 
         return null;
