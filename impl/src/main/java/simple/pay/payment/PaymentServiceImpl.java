@@ -1,11 +1,14 @@
 package simple.pay.payment;
 
 
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import simple.pay.logger.Logger;
 
 import java.lang.invoke.MethodHandles;
 
-import javax.transaction.Transactional;
+
 
 /**
  * Created by shuailu on 3/31/16.
@@ -15,7 +18,7 @@ public class PaymentServiceImpl implements PaymentService {
     private static final Logger LOGGER = Logger.getLogger(CLAZZ);
 
     @Override
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     public ChargeResponse charge(ChargeRequest chargeRequest) {
         if (chargeRequest.autoCharge) {
 

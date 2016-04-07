@@ -10,6 +10,30 @@ public class ChargeRequest {
     BigDecimal amount;
     boolean autoCharge;
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public boolean isAutoCharge() {
+        return autoCharge;
+    }
+
+    public void setAutoCharge(boolean autoCharge) {
+        this.autoCharge = autoCharge;
+    }
+
     @Override
     public String toString() {
         return "ChargeRequest{" +
