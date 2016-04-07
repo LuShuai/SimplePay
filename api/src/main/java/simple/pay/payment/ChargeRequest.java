@@ -6,9 +6,10 @@ import java.math.BigDecimal;
  * Created by shuailu on 3/31/16.
  */
 public class ChargeRequest {
-    Long userId;
-    BigDecimal amount;
-    boolean autoCharge;
+    private Long userId;
+    private BigDecimal amount;
+    private BigDecimal tax;
+    private boolean autoCharge;
 
     public Long getUserId() {
         return userId;
@@ -32,6 +33,14 @@ public class ChargeRequest {
 
     public void setAutoCharge(boolean autoCharge) {
         this.autoCharge = autoCharge;
+    }
+
+    public BigDecimal getTax() {
+        return tax;
+    }
+
+    public void setTax(BigDecimal tax) {
+        this.tax = tax;
     }
 
     @Override
